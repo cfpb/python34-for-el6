@@ -126,10 +126,8 @@ make altinstall DESTDIR=%{buildroot} PREFIX=%{prefix}
 # --no-check-certificate must be used because of old verison
 # of wget
 wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
-mkdir -p %{_topdir}/BUILD/pip
 LD_LIBRARY_PATH=%{buildroot}%{prefix}/lib %{buildroot}%{bindir}/python3.4 get-pip.py
 # Now virtualenv
-mkdir -p %{_topdir}/BUILD/virtualenv
 LD_LIBRARY_PATH=%{buildroot}%{prefix}/lib %{buildroot}%{bindir}/pip3.4 install virtualenv
 
 # Fix paths in shebangs
@@ -145,6 +143,11 @@ for f in $FOLDERS
 do
 	sed -i 's|'%{buildroot}'||g' $f/RECORD
 done
+
+# Ensure 3.4 doesn't conflict with other versions
+mv %{buildroot}%{prefix}/bin/wheel %{buildroot}%{prefix}/bin/wheel-3.4
+rm %{buildroot}%{prefix}/bin/pip
+rm %{buildroot}%{prefix}/bin/virtualenv
 
 ###########################################################
 # CLEAN
@@ -175,13 +178,13 @@ done
 %{bindir}/pyvenv-3.4
 %{bindir}/pydoc*
 %{bindir}/python%{pybasever}
-%{bindir}/pip
+#%{bindir}/pip
 %{bindir}/pip3
 %{bindir}/pip3.4
 %{bindir}/easy_install-3.4
-%{bindir}/virtualenv
+#%{bindir}/virtualenv
 %{bindir}/virtualenv-3.4
-%{bindir}/wheel
+%{bindir}/wheel-3.4
 
 # Man files
 %{prefix}/share/man/*/*
