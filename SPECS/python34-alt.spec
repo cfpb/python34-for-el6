@@ -19,7 +19,7 @@
 ###############
 Name: %{python}
 Version: %{pyver}
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: An interpreted, interacive, object-oriented programming language
 Group: Development/Languages
 License: Python
