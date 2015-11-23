@@ -148,7 +148,6 @@ done
 mv %{buildroot}%{prefix}/bin/wheel %{buildroot}%{prefix}/bin/wheel-3.4
 rm %{buildroot}%{prefix}/bin/pip
 rm %{buildroot}%{prefix}/bin/virtualenv
-rm %{buildroot}%{prefix}/bin/easy_install
 
 ###########################################################
 # CLEAN
