@@ -146,12 +146,9 @@ done
 
 # Ensure 3.4 doesn't conflict with other versions
 mv %{buildroot}%{prefix}/bin/wheel %{buildroot}%{prefix}/bin/wheel-3.4
-rm %{buildroot}%{prefix}/bin/pip
-rm %{buildroot}%{prefix}/bin/virtualenv
-
-if [ -e %{buildroot}${prefix}/bin/easy_install ]
-	rm %{buildroot}%{prefix}/bin/easy_install
-fi
+rm -f %{buildroot}%{prefix}/bin/pip
+rm -f %{buildroot}%{prefix}/bin/virtualenv
+rm -f %{buildroot}%{prefix}/bin/easy_install
 
 ###########################################################
 # CLEAN
