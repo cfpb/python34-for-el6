@@ -184,7 +184,7 @@ rm -f %{buildroot}%{prefix}/bin/easy_install
 %{bindir}/pip3.4
 %{bindir}/easy_install-3.4
 #%{bindir}/virtualenv
-%{bindir}/virtualenv-3.4
+%{bindir}/virtualenv-3.5
 %{bindir}/wheel-3.4
 
 # Man files
