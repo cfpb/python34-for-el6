@@ -147,8 +147,8 @@ done
 # Ensure 3.4 doesn't conflict with other versions
 mv %{buildroot}%{prefix}/bin/wheel %{buildroot}%{prefix}/bin/wheel-3.4
 rm -f %{buildroot}%{prefix}/bin/pip
-rm -f %{buildroot}%{prefix}/bin/virtualenv
 rm -f %{buildroot}%{prefix}/bin/easy_install
+mv %{buildroot}%{prefix}/bin/virtualenv %{buildroot}%{prefix}/bin/virtualenv-3.4
 
 ###########################################################
 # CLEAN
@@ -183,8 +183,7 @@ rm -f %{buildroot}%{prefix}/bin/easy_install
 %{bindir}/pip3
 %{bindir}/pip3.4
 %{bindir}/easy_install-3.4
-#%{bindir}/virtualenv
-%{bindir}/virtualenv-3.5
+%{bindir}/virtualenv-3.4
 %{bindir}/wheel-3.4
 
 # Man files
